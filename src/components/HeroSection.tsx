@@ -5,8 +5,9 @@ import { useState, useEffect } from "react";
 export default function HeroSection() {
   const images = [
     "/HS1.png",
-    "/HS2.png",
-    "/HS3.png", // add more hero images here
+    "/HS2.jpeg",
+    "/g12.jpg",
+    "/HS4.jpg" // add more hero images here
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

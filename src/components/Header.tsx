@@ -9,78 +9,82 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
+    { name: "About", href: "/aboutus" },
     { name: "Contact", href: "/contact" },
-    { name: "Donate", href: "/donate" },
+    { name: "gallery", href: "/gallery" },
   ];
 
   return (
-    <header className="w-full bg-white shadow-sm">
-      <div className="flex items-center justify-between px-4">
-        {/* Logo */}
-        <div className="flex items-center py-3">
-          <Image
-            src="/logo.png"
-            alt="Roshni Foundation Logo"
-            width={166}
-            height={66}
-            className="rounded-[10px] object-cover"
-          />
-        </div>
+ <header className="w-full bg-white shadow-sm">
+  <div className="flex items-center justify-between px-4">
+    {/* Logo */}
+    <div className="flex items-center py-3">
+      <Image
+        src="/logo.png"
+        alt="Roshni Foundation Logo"
+        width={166}
+        height={66}
+        className="rounded-[10px] object-cover"
+      />
+    </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10 py-3">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-[#525560] font-roboto text-base font-medium"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Donate Box (Desktop) */}
-        <div className="hidden md:flex w-[190px] h- flex-shrink-0 bg-[#213E8C] justify-center items-center">
-          <p className="text-white font-roboto text-[25.833px] font-normal leading-[120%]">
-            Donate
-          </p>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-[#213E8C]"
-          onClick={() => setIsOpen(!isOpen)}
+    {/* Desktop Nav */}
+    <nav className="hidden md:flex items-center gap-10 py-3">
+      {navLinks.map((link) => (
+        <Link
+          key={link.name}
+          href={link.href}
+          className="text-[#525560] font-roboto text-base font-medium"
         >
-          {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
-        </button>
+          {link.name}
+        </Link>
+      ))}
+    </nav>
+
+    {/* Donate Box (Desktop) */}
+    <Link href="/donate">
+      <div className="hidden md:flex w-[190px] h-[60px] flex-shrink-0 bg-[#213E8C] justify-center items-center cursor-pointer hover:bg-[#1b326e] transition">
+        <p className="text-white font-roboto text-[25.833px] font-normal leading-[120%]">
+          Donate
+        </p>
       </div>
+    </Link>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-white shadow-inner">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-[#525560] font-roboto text-base font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
+    {/* Mobile Menu Button */}
+    <button
+      className="md:hidden text-[#213E8C]"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
+    </button>
+  </div>
 
-          {/* Mobile Donate */}
-          <div className="w-full flex justify-center">
-            <div className="w-[190px] h-[60px] bg-[#213E8C] flex justify-center items-center">
-              <p className="text-white font-roboto text-lg font-normal leading-[120%]">
-                Donate
-              </p>
-            </div>
+  {/* Mobile Nav */}
+  {isOpen && (
+    <div className="md:hidden flex flex-col items-center gap-4 py-4 bg-white shadow-inner">
+      {navLinks.map((link) => (
+        <Link
+          key={link.name}
+          href={link.href}
+          className="text-[#525560] font-roboto text-base font-medium"
+          onClick={() => setIsOpen(false)}
+        >
+          {link.name}
+        </Link>
+      ))}
+
+      {/* Mobile Donate */}
+      <div className="w-full flex justify-center">
+        <Link href="/donate" onClick={() => setIsOpen(false)}>
+          <div className="w-[190px] h-[60px] bg-[#213E8C] flex justify-center items-center cursor-pointer hover:bg-[#1b326e] transition">
+            <p className="text-white font-roboto text-lg font-normal leading-[120%]">
+              Donate
+            </p>
           </div>
-        </div>
-      )}
-    </header>
+        </Link>
+      </div>
+    </div>
+  )}
+  </header>
   );
 }
