@@ -23,31 +23,31 @@ const blogPosts = [
 
 const BlogNewsSection = () => {
   return (
-    <section className="flex flex-col w-[1440px] h-[742px] px-[72px] pt-[34px] pb-[13px] items-center gap-[60px] mx-auto">
+    <section className="flex flex-col max-w-[1440px] px-4 sm:px-[72px] pt-[34px] pb-[13px] items-center gap-[60px] mx-auto">
       {/* Header */}
-      <div className="flex justify-between w-full">
-        <h2 className="text-[32px] font-bold">Latest News and Blog</h2>
-        <button className="border border-black px-6 py-2 rounded-md text-sm hover:bg-black hover:text-white transition">
+      <div className="flex flex-col sm:flex-row justify-between w-full gap-4 sm:gap-0">
+        <h2 className="text-2xl sm:text-[32px] font-bold">Latest News and Blog</h2>
+        <button className="border border-black px-4 sm:px-6 py-2 rounded-md text-sm hover:bg-black hover:text-white transition w-fit">
           MORE NEWS
         </button>
       </div>
 
       {/* Cards */}
-      <div className="flex gap-8 w-full">
+      <div className="flex flex-col sm:flex-row gap-8 w-full items-center sm:items-stretch">
         {blogPosts.map((post, idx) => (
           <div
             key={idx}
-            className="bg-white w-[384px] rounded-xl shadow-md flex flex-col overflow-hidden transition duration-300 ease-in-out hover:shadow-lg hover:scale-[1.03]"
+            className="bg-white w-full sm:w-[384px] rounded-xl shadow-md flex flex-col overflow-hidden transition duration-300 ease-in-out hover:shadow-lg hover:scale-[1.03]"
           >
             <Image
               src={post.image}
               alt={post.title}
               width={384}
               height={358}
-              className="h-[358px] w-full object-cover"
+              className="h-[200px] sm:h-[358px] w-full object-cover"
             />
 
-            <div className="p-6 flex flex-col gap-2">
+            <div className="p-4 sm:p-6 flex flex-col gap-2">
               <p className="text-sm text-gray-500">📅 {post.date}</p>
               <h3 className="text-lg font-semibold">{post.title}</h3>
               <p className="text-sm text-gray-600">{post.desc}</p>

@@ -5,7 +5,6 @@ import ImpactSection from "@/components/ImpactSection";
 import GoodActionsSection from "@/components/GoodActionsSection";
 import StatsSection from "@/components/StatsSection";
 import OrganizationSection from "@/components/OrganizationSection";
-import CausesSection from "@/components/CauseSection";
 import BlogNewsSection from "@/components/BlogNewsSection";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
@@ -19,7 +18,6 @@ export default function Home() {
       <GoodActionsSection />
       <StatsSection />
       <OrganizationSection />
-      <CausesSection />
       <BlogNewsSection />
       <HeroBanner />
       <Footer />

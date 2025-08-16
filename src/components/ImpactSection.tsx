@@ -26,14 +26,16 @@ const features = [
 
 const ImpactSection: FC = () => {
   return (
-    <section className="w-full px-18 py-16 flex items-center gap-30 bg-[#F8F9FA]">
-      {features.map((feature, idx) => (
-        <div key={idx} className="flex flex-col gap-2 max-w-xs">
-          {feature.icon}
-          <h3 className="font-bold text-lg">{feature.title}</h3>
-          <p className="text-gray-600 text-sm">{feature.description}</p>
-        </div>
-      ))}
+    <section className="w-full px-6 sm:px-12 py-12 bg-[#F8F9FA]">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
+        {features.map((feature, idx) => (
+          <div key={idx} className="flex flex-col items-center sm:items-start gap-2">
+            {feature.icon}
+            <h3 className="font-bold text-lg">{feature.title}</h3>
+            <p className="text-gray-600 text-sm">{feature.description}</p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
