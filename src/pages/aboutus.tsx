@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 
 export default function About() {
@@ -118,19 +119,21 @@ export default function About() {
   </section>
 
   {/* Sponsor a Child CTA */}
-  <section className="py-16 bg-blue-800 text-white text-center">
-    <h2 className="text-3xl font-bold mb-4">Sponsor a Child</h2>
-    <p className="max-w-2xl mx-auto mb-8">
-      With just <span className="font-semibold">₹500 per month</span> or <span className="font-semibold">₹6,000 per year</span>, 
-      you can transform a child’s future by giving them access to quality education and vocational training.
-    </p>
-    <a
-      href="/contact"
-      className="bg-white text-blue-800 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
-    >
-      Become a Sponsor
-    </a>
-  </section>
+ <section className="py-16 bg-blue-800 text-white text-center">
+  <h2 className="text-3xl font-bold mb-4">Sponsor a Child</h2>
+  <p className="max-w-2xl mx-auto mb-8">
+    With just <span className="font-semibold">₹500 per month</span> or{" "}
+    <span className="font-semibold">₹6,000 per year</span>, you can transform a
+    child’s future by giving them access to quality education and vocational
+    training.
+  </p>
+  <Link
+    href="/contact"
+    className="bg-white text-blue-800 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
+  >
+    Become a Sponsor
+  </Link>
+</section>
 
   {/* Gallery */}
   <section className="py-16 bg-gray-50">
